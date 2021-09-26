@@ -1,16 +1,11 @@
-# paper
+# Paper
 
 Scan documents on the go
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="images/Paper0.png">
+<object data="/images/PaperLaunch.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="/images/PaperLaunch.pdf">
+        <p>PDF Not supported by this browser.</p>
+    </embed>
+</object>

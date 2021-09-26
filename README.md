@@ -8,8 +8,3 @@ Paper is a cross platform application developed using Flutter.
 <img src="images/paper.png">
 <img src="images/papercollage1.png">
 <img src="images/papercollage2.png">
-<object data="/images/PaperLaunch.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="/images/PaperLaunch.pdf">
-        <p>PDF Not supported by this browser.</p>
-    </embed>
-</object>

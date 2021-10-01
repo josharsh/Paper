@@ -9,7 +9,6 @@ import 'components/top_back_skip_view.dart';
 import 'components/welcome_view.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 
-
 void main() async {
   await DotEnv.dotenv.load(fileName: ".env");
   runApp(MyApp());

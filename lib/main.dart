@@ -12,8 +12,13 @@ import 'components/splash_view.dart';
 import 'components/top_back_skip_view.dart';
 import 'components/welcome_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 
-void main() => runApp(MyApp());
+
+void main() async {
+  await DotEnv.load(fileName: ".env");
+  runApp(MyApp());
+};
 
 class MyApp extends StatefulWidget {
   @override
@@ -44,7 +49,7 @@ class _IntroductionAnimationScreenState
 
   @override
   void initState() {
-    FlutterGeniusScan.setLicenceKey('533c50065651020807550656394550000c4d580b475e534b115e1a16564855423d0552500f06060f5d0108').then((result)=>{
+    FlutterGeniusScan.setLicenceKey(DotEnv.env['GENIUS_SCAN_LICENCE_KEY']).then((result)=>{
       print("License has been set")
     }).catchError((err){print("Professor Snape $err");});
     _animationController =

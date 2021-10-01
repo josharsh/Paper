@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_genius_scan/flutter_genius_scan.dart';
 import 'package:open_file/open_file.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
+
 class CenterNextButton extends StatelessWidget {
   final AnimationController animationController;
   final VoidCallback onNextClick;
@@ -101,7 +103,7 @@ class CenterNextButton extends StatelessWidget {
                             key: ValueKey('Scan Button'),
 
                             onTap: () {
-                              FlutterGeniusScan.setLicenceKey('533c50065651020807550656394550000c4d580b475e534b115e1a16564855423d0552500f06060f5d0108').then((result)=>{
+                              FlutterGeniusScan.setLicenceKey(DotEnv.env['GENIUS_SCAN_LICENCE_KEY']).then((result)=>{
                                 print("License has been set")
                               }).catchError((err){print("JJJosharsh");});
                               FlutterGeniusScan.scanWithConfiguration({

@@ -8,8 +8,10 @@ import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 class CenterNextButton extends StatelessWidget {
   final AnimationController animationController;
   final VoidCallback onNextClick;
+  final VoidCallback onbackClick;
   const CenterNextButton(
-      {Key? key, required this.animationController, required this.onNextClick})
+      // {Key? key, required this.animationController, required this.onNextClick})
+      {Key? key, required this.animationController, required this.onNextClick, required this.onbackClick})
       : super(key: key);
 
   @override
@@ -75,7 +77,7 @@ class CenterNextButton extends StatelessWidget {
                     bottom: 38 - (38 * _signUpMoveAnimation.value)),
                 child: Container(
                   height: 58,
-                  width: 58 + (200 * _signUpMoveAnimation.value),
+                  width: 85 + (200 * _signUpMoveAnimation.value),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
                         8 + 32 * (1 - _signUpMoveAnimation.value)),
@@ -130,11 +132,29 @@ class CenterNextButton extends StatelessWidget {
                           )
                         : InkWell(
                             key: ValueKey('next button'),
-                            onTap: onNextClick,
+                            // onTap: onNextClick,
                             child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Icon(Icons.arrow_forward_ios_rounded,
-                                  color: Colors.white),
+                              padding: EdgeInsets.all(0.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: 
+                                  [GestureDetector(
+                                    onTap: onbackClick,
+                                    child: Icon(
+                                      Icons.arrow_back_ios_rounded,
+                                        color: Colors.white
+                                      ),
+                                  ),
+                                  SizedBox(width: 5,),
+                                  GestureDetector(
+                                    onTap: onNextClick,
+                                    child: Icon(
+                                      Icons.arrow_forward_ios_rounded,
+                                        color: Colors.white
+                                      ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                   ),

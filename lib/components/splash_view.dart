@@ -36,14 +36,14 @@ class _SplashViewState extends State<SplashView> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+              padding: EdgeInsets.only(top: 0.0, bottom: 8.0),
               child: Text(
                 "Paper",
                 style: TextStyle(fontSize: 35.0, fontWeight: FontWeight.bold, color:Color(0xff132137)),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 64, right: 64,top: 8.0, bottom: 8.0),
+              padding: EdgeInsets.only(left: 64, right: 64),
               child: Text(
                 "Paper helps you scan your documents on the go using your phone",
                 style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
@@ -51,11 +51,11 @@ class _SplashViewState extends State<SplashView> {
               ),
             ),
             SizedBox(
-              height: 48,
+              height: 80,
             ),
             Padding(
               padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).padding.bottom + 16),
+                bottom: MediaQuery.of(context).padding.bottom),
               child: InkWell(
                 onTap: () {
                   widget.animationController.animateTo(0.2);

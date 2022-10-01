@@ -54,7 +54,7 @@ class RelaxView extends StatelessWidget {
     );
 
     final _relaxAnimation =
-        Tween<Offset>(begin: Offset(0, -2), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: Offset(0, -2), end: Offset(0, 1)).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Interval(
@@ -88,7 +88,7 @@ class RelaxView extends StatelessWidget {
                 position: _textAnimation,
                 child: Padding(
                   padding:
-                      EdgeInsets.only(left: 64, right: 64, top: 16),
+                      EdgeInsets.only(left: 64, right: 64, top: 80),
                   child: Text(
                     "Paper uses intelligent sense to automatically highlight the document so that you can frame it correctly.",
                     textAlign: TextAlign.center,
@@ -99,7 +99,7 @@ class RelaxView extends StatelessWidget {
               SlideTransition(
                 position: _imageAnimation,
                 child: Container(
-                  constraints: BoxConstraints(maxWidth: 650, maxHeight: 450),
+                  constraints: BoxConstraints(maxWidth: 650, maxHeight: 400),
                   child: Image.asset(
                     'assets/introduction_animation/relax_image.gif',
                     fit: BoxFit.contain,

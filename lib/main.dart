@@ -89,6 +89,7 @@ class _IntroductionAnimationScreenState
             CenterNextButton(
               animationController: _animationController!,
               onNextClick: _onNextClick,
+              onbackClick: _onBackClick,
             ),
           ],
         ),

@@ -20,15 +20,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          body: IntroductionAnimationScreen()),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(body: IntroductionAnimationScreen()),
     );
   }
 }
+
 class IntroductionAnimationScreen extends StatefulWidget {
   const IntroductionAnimationScreen({Key? key}) : super(key: key);
 
@@ -43,9 +43,12 @@ class _IntroductionAnimationScreenState
 
   @override
   void initState() {
-    FlutterGeniusScan.setLicenceKey(DotEnv.dotenv.env['GENIUS_SCAN_LICENCE_KEY'] ?? '').then((result)=>{
-      print("License has been set")
-    }).catchError((err){print("Professor Snape $err");});
+    FlutterGeniusScan.setLicenceKey(
+            DotEnv.dotenv.env['GENIUS_SCAN_LICENCE_KEY'] ?? '')
+        .then((result) => {print("License has been set")})
+        .catchError((err) {
+      print("Professor Snape $err");
+    });
     _animationController =
         AnimationController(vsync: this, duration: Duration(seconds: 8));
     _animationController?.animateTo(0.0);
